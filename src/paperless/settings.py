@@ -191,6 +191,7 @@ GNUPG_HOME = os.getenv("HOME", "/tmp")
 CONVERT_BINARY = os.getenv("PAPERLESS_CONVERT_BINARY")
 CONVERT_TMPDIR = os.getenv("PAPERLESS_CONVERT_TMPDIR")
 CONVERT_MEMORY_LIMIT = os.getenv("PAPERLESS_CONVERT_MEMORY_LIMIT")
+CONVERT_DENSITY = os.getenv("PAPERLESS_CONVERT_DENSITY")
 
 # Unpaper
 UNPAPER_BINARY = os.getenv("PAPERLESS_UNPAPER_BINARY", "unpaper")
@@ -209,7 +210,7 @@ MAIL_CONSUMPTION = {
     "PORT": os.getenv("PAPERLESS_CONSUME_MAIL_PORT"),
     "USERNAME": os.getenv("PAPERLESS_CONSUME_MAIL_USER"),
     "PASSWORD": os.getenv("PAPERLESS_CONSUME_MAIL_PASS"),
-    "USE_SSL": True,  # If True, use SSL/TLS to connect
+    "USE_SSL": os.getenv("PAPERLESS_CONSUME_MAIL_USE_SSL", "y").lower() == "y",  # If True, use SSL/TLS to connect
     "INBOX": "INBOX"  # The name of the inbox on the server
 }
 
